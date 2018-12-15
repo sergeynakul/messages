@@ -1,0 +1,11 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Messages</h1>
+
+<% @messages.each do |message| %>
+  <%= link_to "Message #{message.id}", message %><br>
+<% end %>
+
+<br>
+
+<%= link_to 'New Message', new_message_path %>

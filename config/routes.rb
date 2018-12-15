@@ -1,3 +1,4 @@
 Rails.application.routes.draw do
-  root 'application#hello'
+  root "messages#index"
+  resources :messages
 end

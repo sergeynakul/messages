@@ -1,0 +1,31 @@
+<%= form_with(model: message, local: true) do |form| %>
+  <% if message.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(message.errors.count, "error") %> prohibited this message from being saved:</h2>
+
+      <ul>
+      <% message.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :body %>
+    <%= form.text_area :body %>
+  </div>
+
+<p>Destroy message:</p>
+
+  <div class="field">
+    <%= form.label :destruction, "after the first link visit", :value => true %>
+    <%= form.radio_button :destruction, true %>
+    <%= form.label :destruction, "after 1 hour", :value => false %>
+    <%= form.radio_button :destruction, false %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
